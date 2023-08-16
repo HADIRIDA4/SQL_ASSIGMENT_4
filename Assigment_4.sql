@@ -257,7 +257,8 @@ SELECT
     INNER JOIN payment p ON r.rental_id = p.rental_id
     GROUP BY
         i.store_id;
-----Determine the average rental duration and total revenue for each store, considering different payment methods.
+----Determine the average rental duration and total revenue for each store
+
 SELECT
     s.store_id,
     AVG(EXTRACT(DAY FROM (r.return_date - r.rental_date))) AS average_rental_duration_days,
